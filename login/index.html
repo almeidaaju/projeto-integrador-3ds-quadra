@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+  <div class="mobile-container">
+    <!-- Cabeçalho com Ícones -->
+    <header class="top-bar">
+      <i class="fa-solid fa-bars icon"></i>
+      <div class="bell-wrapper">
+        <i class="fa-solid fa-bell icon"></i>
+        <span class="notification-dot"></span>
+      </div>
+      <i class="fa-solid fa-circle-user icon"></i>
+    </header>
+
+    <!-- Banner Principal -->
+    <div class="banner">
+      <h1>Faça seu login</h1>
+    </div>
+
+    <!-- Formulário de Login -->
+    <main class="content">
+      <form class="login-form">
+        <div class="input-group">
+          <label for="email">Fazer login</label>
+          <input type="email" id="email" placeholder="Digite seu e-mail">
+        </div>
+
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Digite sua senha">
+        </div>
+
+        <!-- Opção do Google -->
+        <div class="social-login">
+          <p>continuar com @ escola</p>
+          <button type="button" class="btn-google">
+            <i class="fa-brands fa-google"></i>
+            <span>entrar com o google</span>
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bottom-bar"></footer>
+  </div>
+
 </body>
 </html>
