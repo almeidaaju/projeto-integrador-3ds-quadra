@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horários Confirmados</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="aplicativo">
+
+    <div class="barra-topo">
+      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bell"></i>
+      <i class="fa-solid fa-circle-user"></i>
+    </div>
+
+    <div class="titulo">
+      Horários confirmados
+    </div>
+
+
+    <div class="conteudo">
+      <div class="filtros">
+        <button class="botao-filtro">filtrar por data</button>
+        <div class="caixa-busca">
+          <i class="fa-solid fa-magnifying-glass" style="color:#aaa;"></i>
+          <input type="text" placeholder="buscar">
+        </div>
+      </div>
+
+      
+      <div class="lista-cartoes" id="listaHorarios">
+        <div class="cartao">
+          <div class="linha-cartao">
+            <span>Hoje, 17 de Junho</span>
+            <span>Horário: 14:05 - 14:55</span>
+          </div>
+          <div><strong>Local:</strong> Quadra coberta</div>
+          <div><strong>Disciplina:</strong> Ed.Física (turma 8A Prof. )</div>
+          <div class="status"><i class="fa-solid fa-circle-check"></i> Confirmado</div>
+        </div>
+
+        <div class="cartao">
+          <div class="linha-cartao">
+            <span>Amanhã, 18 de Junho</span>
+            <span>Horário: 08:55 - 9:45</span>
+          </div>
+          <div><strong>Local:</strong> Quadra coberta</div>
+          <div><strong>Disciplina:</strong> Ed.Física (turma 3T - Prof. Marcelo)</div>
+          <div class="status"><i class="fa-solid fa-circle-check"></i> Confirmado</div>
+        </div>
+
+        <div class="cartao">
+          <div class="linha-cartao">
+            <span>Sexta, 19 de Junho</span>
+            <span>Horário: 11:35 - 12:25</span>
+          </div>
+          <div><strong>Local:</strong> Quadra coberta</div>
+          <div><strong>Disciplina:</strong> Treino de Volei (Professor Dieter)</div>
+          <div class="status"><i class="fa-solid fa-circle-check"></i> Confirmado</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
