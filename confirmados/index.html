@@ -2,15 +2,14 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Horários Confirmados</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="aplicativo">
-
     <div class="barra-topo">
       <i class="fa-solid fa-bars"></i>
       <i class="fa-solid fa-bell"></i>
@@ -21,7 +20,6 @@
       Horários confirmados
     </div>
 
-
     <div class="conteudo">
       <div class="filtros">
         <button class="botao-filtro">filtrar por data</button>
@@ -31,39 +29,69 @@
         </div>
       </div>
 
-      
       <div class="lista-cartoes" id="listaHorarios">
         <div class="cartao">
           <div class="linha-cartao">
             <span>Hoje, 17 de Junho</span>
-            <span>Horário: 14:05 - 14:55</span>
+            <span>14:05 - 14:55</span>
           </div>
-          <div><strong>Local:</strong> Quadra coberta</div>
-          <div><strong>Disciplina:</strong> Ed.Física (turma 8A Prof. )</div>
+          <p><span>Local:</span> Quadra coberta</p>
+          <p><span>Disciplina:</span> Ed.Física (turma 8A Prof. )</p>
           <div class="status"><i class="fa-solid fa-circle-check"></i> Confirmado</div>
         </div>
 
         <div class="cartao">
           <div class="linha-cartao">
             <span>Amanhã, 18 de Junho</span>
-            <span>Horário: 08:55 - 9:45</span>
+            <span>08:55 - 09:45</span>
           </div>
-          <div><strong>Local:</strong> Quadra coberta</div>
-          <div><strong>Disciplina:</strong> Ed.Física (turma 3T - Prof. Marcelo)</div>
+          <p><span>Local:</span> Quadra coberta</p>
+          <p><span>Disciplina:</span> Ed.Física (turma 3T - Prof. Marcelo)</p>
           <div class="status"><i class="fa-solid fa-circle-check"></i> Confirmado</div>
         </div>
 
         <div class="cartao">
           <div class="linha-cartao">
             <span>Sexta, 19 de Junho</span>
-            <span>Horário: 11:35 - 12:25</span>
+            <span>11:35 - 12:25</span>
           </div>
-          <div><strong>Local:</strong> Quadra coberta</div>
-          <div><strong>Disciplina:</strong> Treino de Volei (Professor Dieter)</div>
+          <p><span>Local:</span> Quadra coberta</p>
+          <p><span>Disciplina:</span> Treino de Volei (Professor Dieter)</p>
           <div class="status"><i class="fa-solid fa-circle-check"></i> Confirmado</div>
         </div>
       </div>
 
+      <div class="area-botoes">
+        <button class="botao-agendar" onclick="mostrarJanela(true)">+ Agendar novo horário</button>
+      </div>
+    </div>
+
+    <div class="fundo-escuro" id="janelaAgendamento">
+      <div class="caixa-janela">
+        <h3>Novo Agendamento</h3>
+        <form onsubmit="adicionarHorario(event)">
+          <div class="campo">
+            <label>Data:</label>
+            <input type="text" id="campoData" placeholder="Ex: Sábado, 20 de Junho" required>
+          </div>
+          <div class="campo">
+            <label>Horário:</label>
+            <input type="text" id="campoHorario" placeholder="Ex: 14:00 - 15:00" required>
+          </div>
+          <div class="campo">
+            <label>Local:</label>
+            <input type="text" id="campoLocal" placeholder="Ex: Quadra coberta" required>
+          </div>
+          <div class="campo">
+            <label>Disciplina / Treino:</label>
+            <input type="text" id="campoDisciplina" placeholder="Ex: Futsal" required>
+          </div>
+          <div class="botoes-janela">
+            <button type="button" class="botao-cancelar" onclick="mostrarJanela(false)">Cancelar</button>
+            <button type="submit" class="botao-salvar">Salvar</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 

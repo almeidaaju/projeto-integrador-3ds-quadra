@@ -1,80 +1,88 @@
-  * {
+   /* Reset total para ocupação da tela */
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
     }
 
-    body {
-      background: #eef2f5;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .aplicativo {
+    html, body {
       width: 100%;
-      max-width: 380px;
-      background: #a4ca9c;
-      border-radius: 16px;
+      height: 100vh;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      position: relative;
+      background-color: #a4ca9c;
     }
 
-   
+    /* Container ocupando 100% da janela */
+    .aplicativo {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #a4ca9c;
+    }
+
+    /* Barra Superior */
     .barra-topo {
       background: #508051;
       color: #fff;
       display: flex;
       justify-content: space-between;
-      padding: 12px 18px;
-      font-size: 1.1rem;
+      align-items: center;
+      padding: 16px 20px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
     }
 
+    /* Faixa de Título */
     .titulo {
       background: #88b786;
       color: #fff;
       text-align: center;
-      padding: 12px;
-      font-size: 1.3rem;
+      padding: 14px 10px;
+      font-size: 1.4rem;
       font-weight: bold;
+      flex-shrink: 0;
     }
 
+    /* Conteúdo Principal */
     .conteudo {
       background: #fff;
-      margin: -8px 12px 12px 12px;
-      border-radius: 16px;
-      padding: 14px;
+      margin: 10px;
+      border-radius: 15px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      flex: 1;
+      overflow: hidden;
     }
 
-   
+    /* Área de Filtros e Busca */
     .filtros {
       display: flex;
-      gap: 8px;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
     }
 
     .botao-filtro {
-      border: 1.5px solid #78b175;
+      border: 1px solid #78b175;
       background: transparent;
       color: #589655;
-      padding: 6px 12px;
+      padding: 8px 14px;
       border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.8rem;
+      font-weight: bold;
+      font-size: 0.85rem;
       cursor: pointer;
     }
 
     .caixa-busca {
       border: 1px solid #ccc;
       border-radius: 20px;
-      padding: 4px 10px;
+      padding: 6px 12px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       flex: 1;
     }
 
@@ -82,128 +90,118 @@
       border: none;
       outline: none;
       width: 100%;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
+    /* Lista de Cartões */
     .lista-cartoes {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
+      flex: 1;
+      overflow-y: auto;
     }
 
     .cartao {
       background: #d2e5d0;
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 0.82rem;
-      color: #222;
-      line-height: 1.4;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
     }
 
     .linha-cartao {
       display: flex;
       justify-content: space-between;
       font-weight: bold;
-      margin-bottom: 2px;
+      margin-bottom: 6px;
+    }
+
+    /* Estilização dos rótulos via CSS */
+    .cartao p span {
+      font-weight: bold;
     }
 
     .status {
       color: #3b8e39;
       font-weight: bold;
-      margin-top: 4px;
+      margin-top: 6px;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
     }
 
-    .botoes {
+    /* Botão de Agendamento */
+    .area-botoes {
       display: flex;
       justify-content: flex-end;
-      align-items: center;
-      margin-top: 5px;
+      padding-top: 12px;
+      flex-shrink: 0;
     }
 
     .botao-agendar {
       background: #4fa14c;
       color: #fff;
       border: none;
-      padding: 10px 14px;
-      border-radius: 10px 0 0 10px;
+      padding: 12px 18px;
+      border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
     }
 
-    .botao-mais {
-      background: #4fa14c;
-      color: #fff;
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    
+    /* Modal / Pop-up */
     .fundo-escuro {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
       display: none;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      z-index: 99;
     }
 
     .caixa-janela {
       background: #fff;
-      width: 100%;
+      width: 90%;
+      max-width: 360px;
       border-radius: 12px;
-      padding: 16px;
+      padding: 20px;
     }
 
     .caixa-janela h3 {
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    .campo {
-      margin-bottom: 10px;
+      text-align: center;
+      margin-bottom: 15px;
     }
 
     .campo label {
       display: block;
-      font-size: 0.75rem;
       font-weight: bold;
-      margin-bottom: 3px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+      margin-bottom: 4px;
     }
 
     .campo input {
       width: 100%;
-      padding: 6px 8px;
+      padding: 8px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
-    .janela {
+    .botoes-janela {
       display: flex;
       justify-content: flex-end;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .botao-cancelar {
-      background: #e0e0e0;
+      background: #eee;
       border: none;
-      padding: 6px 12px;
+      padding: 8px 14px;
       border-radius: 6px;
       cursor: pointer;
     }
@@ -212,8 +210,8 @@
       background: #4fa14c;
       color: #fff;
       border: none;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 6px;
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
     }
